@@ -1,0 +1,55 @@
+{
+ "buyer_text_bisaya": "Pila ang presyo sa 3,000 ka botelya sa sweet chili sauce, ug mahimo ba ipadala sa Los Angeles?",
+ "detected_language": "ceb",
+ "english_for_agent": "What is the price for 3,000 bottles of sweet chili sauce, and can it be shipped to Los Angeles?",
+ "guard_blocked": false,
+ "agent_reply_english": "For 3,000 bottles, the price is US$1.20 per bottle, or US$3,600 total. Shipping to Los Angeles is estimated at 4 weeks.",
+ "reply_in_bisaya": "Para sa 3,000 ka botelya, ang presyo kay US$1.20 kada botelya, o US$3,600 sa kinatibuk-an. Gibanabana nga moabot og 4 ka semana ang pagpadala ngadto sa Los Angeles.",
+ "number_check": "ok",
+ "steps": [
+  {
+   "agent": "translator",
+   "tokens_in": 114,
+   "tokens_out": 38,
+   "reply": "{\"language\":\"ceb\",\"english\":\"What is the price for 3,000 bottles of sweet chili sauce, and can it be shipped to Los Angeles?\"}"
+  },
+  {
+   "agent": "booth_rep",
+   "tokens_in": 705,
+   "tokens_out": 28,
+   "tool_calls": [
+    {
+     "name": "quote_price",
+     "arguments": "{\"product_name\":\"Sweet chili sauce 250 ml\",\"quantity\":3000}"
+    }
+   ]
+  },
+  {
+   "agent": "booth_rep",
+   "tokens_in": 789,
+   "tokens_out": 18,
+   "tool_calls": [
+    {
+     "name": "shipping_estimate",
+     "arguments": "{\"region\":\"USA\"}"
+    }
+   ]
+  },
+  {
+   "agent": "booth_rep",
+   "tokens_in": 831,
+   "tokens_out": 40,
+   "reply": "For 3,000 bottles, the price is US$1.20 per bottle, or US$3,600 total. Shipping to Los Angeles is estimated at 4 weeks."
+  },
+  {
+   "agent": "translator",
+   "tokens_in": 144,
+   "tokens_out": 61,
+   "reply": "Para sa 3,000 ka botelya, ang presyo kay US$1.20 kada botelya, o US$3,600 sa kinatibuk-an. Gibanabana nga moabot og 4 ka semana ang pagpadala ngadto sa Los Angeles."
+  }
+ ],
+ "cache": {
+  "model_calls_for_first_translation": 1,
+  "extra_calls_when_translating_same_text_again": 0
+ }
+}

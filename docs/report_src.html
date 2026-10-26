@@ -21,8 +21,10 @@
   table.t td.num, table.t th.num { text-align: right; white-space: nowrap; }
   tr.total td { font-weight: 700; background: #e8f3e4; }
   .fig { break-inside: avoid; margin: 8pt 0 10pt; text-align: center; }
-  .fig img { max-width: 86%; border: 1.5px solid #d9cfb0; border-radius: 6px; }
-  .fig.half img { max-width: 58%; }
+  .fig img { max-width: 78%; border: 1.5px solid #d9cfb0; border-radius: 6px; }
+  .fig.half img { max-width: 52%; }
+  .fig3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8pt; }
+  .fig3 img { width: 100%; max-width: 100%; }
   .cap { font-size: 9pt; color: #5a5a48; margin-top: 3pt; text-align: left; }
   .todo { background: #fff3cd; border: 2px dashed #c68a00; border-radius: 8px; padding: 8pt 12pt; margin: 8pt 0; break-inside: avoid; }
   .note { background: #e8f3e4; border-left: 5px solid #1f5c3a; padding: 6pt 12pt; margin: 8pt 0; break-inside: avoid; }
@@ -40,8 +42,8 @@
 <h1>🌿 Virtual Food Expo</h1>
 <p class="lead">A virtual food trade show where importers and distributors shop for manufacturers from home, with every message translated into the reader's own language.</p>
 <table class="meta"><tr><td><b>Author</b></td><td>Bettina Palang (solo project), AI for Managers, Final Project, October 26, 2026</td></tr>
-<tr><td><b>GitHub repo</b></td><td><span class="todo" style="display:inline;padding:1pt 6pt">PASTE YOUR GITHUB REPO LINK HERE (the same link you submit on Canvas)</span></td></tr>
-<tr><td><b>App link</b></td><td><span class="todo" style="display:inline;padding:1pt 6pt">PASTE THE ONLINE LINK HERE once it is hosted. If it is not online, write: "Runs locally, see the README in the repo."</span></td></tr>
+<tr><td><b>GitHub repo</b></td><td><a href="https://github.com/tiapal/final-project-1">https://github.com/tiapal/final-project-1</a></td></tr>
+<tr><td><b>App link</b></td><td><a href="https://virtual-food-expo.onrender.com">https://virtual-food-expo.onrender.com</a> <span class="small">(free hosting: the first visit after a quiet period can take about a minute to wake up, and accounts reset when it restarts)</span></td></tr>
 <tr><td><b>In one sentence</b></td><td>Buyers describe what they need, an AI Matchmaker finds vendors, and they chat, schedule calls and request samples with each vendor's AI booth assistant, with all messages translated both ways.</td></tr></table>
 
 <!-- 2. MOTIVATION -->
@@ -66,6 +68,8 @@
 <tr><td><b>Physical shows</b> (Fancy Food Show, Anuga)</td><td>Face-to-face, taste products, huge choice [1][4]</td><td>Cost, travel, crowds, language barriers, one week a year</td></tr>
 <tr><td><b>Alibaba.com, Global Sources</b> (online B2B marketplaces)</td><td>Large supplier directories, year-round, buyers can contact suppliers online [5]</td><td>Search-and-contact marketplaces. An independent review notes paid supplier badges mainly show that a supplier pays the platform, not that quality was checked [5]. I did not find a vendor assistant that answers only from that vendor's own data, or one-tap scheduling and sample requests inside the chat.</td></tr>
 <tr><td><b>ChatGPT or another general chatbot</b></td><td>Translates and answers questions on any topic</td><td>Knows nothing about real vendors, cannot hold a vendor's price list, cannot schedule, cannot track requests, and can make up prices</td></tr>
+<tr><td><b>Canton Fair official app</b> (China Import and Export Fair), sent to me by my dad</td><td>On-site companion for a huge physical fair: badge application, itinerary planning, booth navigation, buyer guide, shuttle, catering, meeting rooms (as shown in the screenshots he sent)</td><td>Built around attending a physical event. My dad also noted that buyers there prefer WhatsApp or Messenger to email because it is faster.</td></tr>
+<tr><td><b>Taiwantrade</b>, sent to me by my dad</td><td>A Taiwan B2B e-marketplace that helps global buyers find Taiwan products, manufacturers and suppliers (from its own description)</td><td>A supplier directory. I did not see in-chat translation or one-tap scheduling in what he sent.</td></tr>
 <tr><td><b>Virtual Food Expo (this project)</b></td><td>Expo-style browsing from home, an AI booth assistant per vendor that answers only from that vendor's data and real price tiers, automatic translation of every message, one-tap meetings, video calls and samples, dashboards for both sides</td><td>Prototype with fake demo vendors and no real orders or payments yet</td></tr>
 </table>
 <p><b>What is different, and why it matters:</b> (1) <i>Language is built into the conversation</i>, so a Bisaya-speaking buyer and a Spanish-speaking maker can talk without a shared language, and every price and quantity is checked so a translation cannot change a number. (2) <i>Each vendor has its own grounded assistant</i>, so buyers get instant answers at any hour, and the assistant cannot reveal the vendor's private bottom price. (3) <i>The next step is one tap</i>: schedule, video call, or request a sample, with approval from the other side and calendar invites. (4) It is designed for people who may be older or less comfortable with technology: large type, high contrast, a store-like layout.</p>
@@ -197,11 +201,23 @@
 
 <!-- 7. IMPACT -->
 <h2>7. Impact</h2>
-<div class="todo"><b>REAL USER TRIAL (needs to be filled in before you submit).</b> The assignment gives the most credit for evidence that a real person tried the app. Fill in this box after your dad (or a manufacturer) tries it:<br>
-<b>Who tried it:</b> ________ &nbsp; <b>Date:</b> ________ &nbsp; <b>Language used:</b> ________<br>
-<b>Task given:</b> e.g. "find an olive oil supplier and ask for a sample"<br>
-<b>Time it took:</b> ______ minutes &nbsp; <b>Where they got stuck:</b> ________<br>
-<b>A quote from them:</b> "________" &nbsp; <b>Screenshot / photo:</b> (insert here)</div>
+<h3>Feedback from a real user</h3>
+<div class="note"><b>Who:</b> my dad, a food distributor, the kind of person this app is built for. <b>When:</b> October 26, 2026. <b>How:</b> he logged in on both the vendor side and the buyer (distributor) side, went through the chats and searches, and then sent his comments to me by Messenger (screenshots below, with his name and photo cropped out). <b>Limit:</b> this is feedback from one person, not a timed task, so I report no completion time.</div>
+<p>His overall verdict: <i>"Your app is very okay &amp; easy to use."</i> Then he gave me these suggestions. Here is what each one means for the project:</p>
+<table class="t">
+<tr><th style="width:44%">What he suggested</th><th>Status and what I learned</th></tr>
+<tr><td>Add more supplier categories "like Hardware, Textile, Food etc."</td><td>Not built. This prototype covers food only; the category rows and search would extend to other goods.</td></tr>
+<tr><td>"You could also put AI language translator"</td><td><b>Already the core feature, yet he asked for it, so it is not obvious enough.</b> The language menu and "Translated from…" labels are too easy to miss. Next: announce it on the login screen and home page.</td></tr>
+<tr><td>Supplier rating or "Verified supplier, so buyers will not be scared in ordering", "just like in Airbnb or Booking.com"</td><td><b>Built</b> (star ratings, and a ✔ Verified badge after an admin reviews a license), yet he suggested it, so it is not obvious enough. The demo vendors are not verified. Needs to be more visible.</td></tr>
+<tr><td>A comment box on the inquiry so the AI searches suppliers, so product category is necessary</td><td>Partly built: the search box takes a free-text request and the Matchmaker finds vendors; category buttons exist. Next: a fuller inquiry form.</td></tr>
+<tr><td>Shipping categories: air, sea, full container (FCL) or loose cargo (LCL)</td><td>Not built. Today a vendor only lists weeks per region. Next.</td></tr>
+<tr><td>Real-time foreign currency exchange</td><td>Not built. All prices are in US dollars. Next.</td></tr>
+<tr><td>Links to company databases to widen the search</td><td>Not built. Next.</td></tr>
+<tr><td>When a buyer inquires about an item, send updates on similar items to their email</td><td>Not built. Next.</td></tr>
+<tr><td>On the Canton Fair app, buyers give an email but "prefer to use WhatsApp or Messenger coz it's faster"</td><td>Insight, not built: let buyers and vendors choose WhatsApp or Messenger for notifications and approvals.</td></tr>
+</table>
+<div class="fig"><div class="fig3"><img src="{{IMG:10_user_feedback_a.jpg}}" alt="Feedback 1"><img src="{{IMG:11_user_feedback_b.jpg}}" alt="Feedback 2"><img src="{{IMG:12_user_feedback_c.jpg}}" alt="Feedback 3"></div><div class="cap">Figure 8. My dad's feedback by Messenger, in order. His name and photo are cropped out. He writes that the app is "very okay &amp; easy to use," then lists his suggestions.</div></div>
+<p><b>What this tells me:</b> a real distributor found the app easy to use, yet asked for features I had already built (translation, ratings, verification), so they need to be easier to spot. Most of his other ideas (shipping modes, currency, more categories) are real needs of the job that I list under next steps.</p>
 <h3>What I can support with numbers today</h3>
 <ul>
 <li><b>Cost to serve:</b> about half a cent of AI cost per full buyer session (assumed prices, measured tokens). For comparison, one 10x10 booth at one show listed at $4,700 to $4,900 [1][2], and one example four-day show trip cost an attendee's employer about $4,000 [3].</li>
@@ -209,7 +225,7 @@
 <li><b>Reach:</b> a buyer can open many vendor booths in one sitting without travel, and every vendor answers instantly at any hour. This is designed in but not yet measured: my test vendors are fake, so I cannot report a real saving.</li>
 <li><b>Who is newly able to take part:</b> people who cannot travel or attend crowded events, and buyers and makers who do not share a language.</li>
 </ul>
-<p class="small">Sources for the numbers: my own test runs (logged in <code>evidence/</code>) and the public sources listed at the end. Anything about real-world savings for a business is an estimate until a pilot user confirms it.</p>
+<p class="small">Sources for the numbers: my own test runs (logged in <code>evidence/</code>) and the public sources listed at the end. Savings for a real business remain estimates until a timed pilot confirms them.</p>
 
 <!-- 8. LIMITS -->
 <h2>8. Limits and next steps</h2>
@@ -220,12 +236,13 @@
 <li>The demo booth assistants accept every meeting and sample request automatically. Vendors can turn that off, but the approval screens have had less testing than the automatic path.</li>
 <li>Translation quality has not been checked by native speakers, especially Bisaya, and product names are not translated.</li>
 <li>Sign-in is basic: no email verification at sign-up, and reset emails need SMTP set up.</li>
-<li>No real-user evidence yet (see Section 7).</li>
+<li>Only one person's untimed feedback so far (see Section 7), no pilot or measured task times.</li>
 <li>The app stores data in a local SQLite file, which is fine for a prototype but not for many users.</li>
 </ul>
 <h3>If I had another month</h3>
 <ol>
-<li>Run a real pilot: my dad and two small manufacturers, measure time to find a supplier, and fix what confuses them.</li>
+<li>Run a timed pilot: my dad and two small manufacturers, measure time to find a supplier, and fix what confuses them. First, make the translation, ratings and Verified badge impossible to miss (my dad asked for features that already exist).</li>
+<li>Add what my dad asked for: shipping modes (air, sea, FCL, LCL), currency conversion, more product categories, similar-item updates by email, and WhatsApp or Messenger notifications.</li>
 <li>Have native speakers review Bisaya, Spanish, Vietnamese and Chinese translations of the common phrases.</li>
 <li>Real vendor onboarding: upload a price sheet or catalog and let the AI turn it into a booth, with the vendor approving every line.</li>
 <li>Real video-call links and calendar invites through Zoom and Google accounts.</li>

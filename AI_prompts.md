@@ -95,3 +95,28 @@
 > but doesnt my dad's test have to be on submisison
 
 > can i paste everything from the final project folder
+
+> this is it: https://github.com/tiapal/final-project-1.git
+
+> ok done, now i am on render, what should i do
+
+> wait its live but now idk what to do
+
+> ok yes works
+> For 3,000 bottles of 500 ml extra virgin olive oil, the price is $3.40 per bottle, or $10,200 total.
+>
+> video call stuff goes through
+
+> this is the render link
+
+> https://virtual-food-expo.onrender.com/#/
+
+> *(Five screenshots of my dad's Messenger feedback about the app; summarized in the report, not published, because it is a private chat.)*
+>
+> this is what he said
+
+> he logged in to both vendor and distributor sides then went through the chats and searches
+> take out his name just crop it then embed it
+
+> so i check the final project folder on my mac,
+> reupload them to github and delete the old files with the same name
