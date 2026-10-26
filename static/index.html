@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Virtual Food Expo</title>
+<link rel="stylesheet" href="/static/style.css?v=4">
+</head>
+<body>
+<header id="top">
+  <a class="brand" href="#/" id="brand">🌿 Virtual Food Expo</a>
+  <div class="top-right">
+    <button class="chip-btn" id="usageBtn" title="Tokens and safety">🔢 <span id="tokenCount">0</span></button>
+    <button class="chip-btn" id="logoutBtn" style="display:none"></button>
+    <label class="visually-hidden" for="langSel">Language</label>
+    <select id="langSel"></select>
+  </div>
+</header>
+<main id="view"></main>
+<div id="overlay" class="overlay" role="dialog" aria-modal="true"><div id="modal" class="modal"></div></div>
+<div id="toast" class="toast"></div>
+<script src="/static/app.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Render blueprint: tells Render how to build and start the app. Secrets are NOT stored here; you type them in Render's dashboard.
+services:
+  - type: web
+    name: virtual-food-expo
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: PORTKEY_API_KEY
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: APP_URL
+        sync: false

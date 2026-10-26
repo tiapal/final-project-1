@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virtual Food Expo: slides</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<style>
+  :root { --green:#1f5c3a; --green-d:#16432a; --cream:#faf5e6; --soft:#c8e0c0; --ink:#1d2a22; --card:#fffdf6; --line:#d9cfb0; }
+  .reveal-viewport { background: var(--cream); }
+  .reveal { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--ink); font-size: 32px; }
+  .reveal h1, .reveal h2, .reveal h3 { font-family: inherit; color: var(--green-d); text-transform: none; letter-spacing: 0; }
+  .reveal h1 { font-size: 2.3em; } .reveal h2 { font-size: 1.5em; margin-bottom: .4em; }
+  .reveal section { text-align: left; }
+  .reveal ul { display: block; margin: 0.3em 0 0 0.6em; } .reveal li { margin: 0.25em 0; line-height: 1.3; }
+  .topbar { position: fixed; top: 0; left: 0; right: 0; height: 16px; background: var(--green); z-index: 30; }
+  .reveal .slides section { padding-top: 14px; }
+  .tag { display: inline-block; background: var(--soft); color: var(--green-d); border-radius: 10px; padding: 2px 16px; font-size: .7em; font-weight: 700; }
+  .big { font-size: 2.2em; font-weight: 800; color: var(--green-d); line-height: 1.1; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
+  .card { background: var(--card); border: 3px solid var(--line); border-radius: 18px; padding: 18px 26px; }
+  .stat { text-align: center; } .stat b { display: block; font-size: 1.9em; color: var(--green-d); } .stat span { font-size: .6em; color: #5a5a48; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 18px; }
+  .reveal img { border: 3px solid var(--line); border-radius: 12px; margin: 0; box-shadow: none; max-height: 480px; }
+  .reveal table { font-size: .8em; border-collapse: collapse; width: 100%; }
+  .reveal th { background: var(--green); color: #fff; padding: 8px 12px; text-align: left; border: 0; }
+  .reveal td { padding: 8px 12px; border-bottom: 2px solid var(--line); background: var(--card); }
+  .todo { background: #fff3cd; border: 3px dashed #c68a00; border-radius: 14px; padding: 12px 22px; font-size: .7em; }
+  .small { font-size: .55em; color: #5a5a48; }
+  .cap { font-size: .5em; color: #5a5a48; margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<div class="reveal"><div class="slides">
+
+<section>
+  <p><span class="tag">AI for Managers · Final Project</span></p>
+  <h1>🌿 Virtual Food Expo</h1>
+  <p style="font-size:1.1em">A food trade show you can attend from home, in your own language.</p>
+  <p class="small">Bettina Palang · October 26, 2026</p>
+</section>
+
+<section>
+  <h2>The problem: food trade shows shut people out</h2>
+  <div class="cols"><ul>
+    <li>Importers and distributors find suppliers at shows. Small makers go to find buyers.</li>
+    <li>A 10x10 booth: <b>$4,700 to $4,900</b> at the Fancy Food Show [1][2]</li>
+    <li>One 4-day show trip: about <b>$4,000</b> per attendee [3]</li>
+    <li>Anuga 2025: <b>8,000 exhibitors</b>, 145,000 visitors [4]. Nobody can meet them all.</li>
+  </ul>
+  <div class="card"><b>It started with my dad.</b><br>He is a food distributor who used to go to the shows. His anxiety now keeps him home, so he misses the suppliers.<br><br>Language is a barrier too.</div></div>
+</section>
+
+<section>
+  <h2>What is new</h2>
+  <table><tr><th></th><th>Online marketplaces</th><th>General chatbot</th><th>Virtual Food Expo</th></tr>
+    <tr><td><b>Each vendor has its own assistant</b></td><td>Not found in my review</td><td>No</td><td>✔ answers only from that vendor's data</td></tr>
+    <tr><td><b>Translation built into the chat</b></td><td>Not checked</td><td>On request</td><td>✔ every message, numbers verified</td></tr>
+    <tr><td><b>One-tap meeting, video call, sample</b></td><td>Not found in my review</td><td>No</td><td>✔ with approval and calendar</td></tr>
+    <tr><td><b>Made for non-technical users</b></td><td>Varies</td><td>Varies</td><td>✔ large type, store-style browsing</td></tr></table>
+  <p class="small">Marketplaces: Alibaba.com, Global Sources. Compared from public descriptions, not hands-on tests.</p>
+</section>
+
+<section>
+  <h2>How the agents work</h2>
+  <div class="cols" style="grid-template-columns: 1.8fr 1fr">
+    <svg viewBox="0 0 760 325" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" font-size="13">
+      <defs><marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1f5c3a"/></marker></defs>
+      <rect x="10" y="120" width="130" height="70" rx="10" fill="#fffdf6" stroke="#1f5c3a" stroke-width="2"/><text x="75" y="148" text-anchor="middle" font-weight="700">Buyer</text><text x="75" y="167" text-anchor="middle" font-size="11">any language</text>
+      <rect x="200" y="120" width="150" height="70" rx="10" fill="#c8e0c0" stroke="#1f5c3a" stroke-width="2"/><text x="275" y="148" text-anchor="middle" font-weight="700">Translator</text><text x="275" y="167" text-anchor="middle" font-size="11">number check + cache</text>
+      <rect x="410" y="120" width="170" height="70" rx="10" fill="#c8e0c0" stroke="#1f5c3a" stroke-width="2"/><text x="495" y="148" text-anchor="middle" font-weight="700">Booth assistant</text><text x="495" y="167" text-anchor="middle" font-size="11">quote_price, shipping</text>
+      <rect x="630" y="120" width="120" height="70" rx="10" fill="#fffdf6" stroke="#1f5c3a" stroke-width="2"/><text x="690" y="148" text-anchor="middle" font-weight="700">Vendor data</text><text x="690" y="167" text-anchor="middle" font-size="11">public only</text>
+      <rect x="410" y="250" width="170" height="60" rx="10" fill="#fff3cd" stroke="#c68a00" stroke-width="2"/><text x="495" y="275" text-anchor="middle" font-weight="700">Output guard</text><text x="495" y="293" text-anchor="middle" font-size="11">blocks private prices</text>
+      <rect x="200" y="20" width="150" height="60" rx="10" fill="#c8e0c0" stroke="#1f5c3a" stroke-width="2"/><text x="275" y="45" text-anchor="middle" font-weight="700">Matchmaker</text><text x="275" y="63" text-anchor="middle" font-size="11">search_vendors</text>
+      <rect x="10" y="250" width="130" height="60" rx="10" fill="#c8e0c0" stroke="#1f5c3a" stroke-width="2"/><text x="75" y="275" text-anchor="middle" font-weight="700">Deal brief</text><text x="75" y="293" text-anchor="middle" font-size="11">chat summary</text>
+      <g stroke="#1f5c3a" stroke-width="2" fill="none" marker-end="url(#a)"><path d="M140,140 L198,140"/><path d="M350,140 L408,140"/><path d="M580,155 L628,155"/><path d="M495,190 L495,248"/><path d="M408,280 L275,280 L275,192"/><path d="M198,172 L142,172"/><path d="M75,120 Q75,50 198,50"/><path d="M75,192 L75,248"/></g>
+    </svg>
+    <ul style="font-size:.72em"><li><b>4 agents</b> on gpt-6-luna</li><li><b>Matchmaker:</b> finds vendors</li><li><b>Booth assistant:</b> one per vendor, answers only from its data</li><li><b>Translator:</b> both ways, checks every number</li><li><b>Deal brief:</b> bullet summary</li><li>Prices and rules are <b>code</b>, not AI</li></ul></div>
+</section>
+
+<section>
+  <h2>Demo: search, then chat across languages</h2>
+  <div class="cols"><div><img src="{{IMG:03_search_matches.jpg}}"><div class="cap">Matchmaker: 98% and 94% matches, each with a reason</div></div>
+  <div><img src="{{IMG:04_chat_translation.jpg}}"><div class="cap">Buyer writes in Bisaya, sees English. "Show original" on every message.</div></div></div>
+</section>
+
+<section>
+  <h2>Demo: home pages for both sides</h2>
+  <div class="cols"><div><img src="{{IMG:02_buyer_home.jpg}}" style="max-height:430px"><div class="cap">Buyer home: 2 requests need an answer, 1 meeting coming up</div></div>
+  <div><img src="{{IMG:08_vendor_home_bisaya.jpg}}" style="max-height:430px"><div class="cap">Vendor home, fully in Bisaya</div></div></div>
+  <p class="small">One-tap actions in every chat: set up a meeting, set up a Zoom or Google Meet call, request a sample. Each asks the other side to approve, then offers calendar or address steps.</p>
+</section>
+
+<section>
+  <h2>Cost to run (measured)</h2>
+  <div class="stats"><div class="card stat"><b>15 calls</b><span>one typical session, English<br>7,390 in · 582 out</span></div>
+    <div class="card stat"><b>19 calls</b><span>same session in Bisaya<br>8,847 in · 905 out</span></div>
+    <div class="card stat"><b>≈ $0.004 to $0.005</b><span>per session at assumed prices</span></div></div>
+  <ul style="font-size:.85em"><li>100 users × 10 sessions a month: about <b>$4 to $5</b>. 10,000 users: about <b>$389 to $499</b>.</li>
+    <li>Cuts: reasoning off, translation cache (0 extra calls on repeat), pre-translated screens, small prompts</li>
+    <li>Cached input tokens: 0. Prompts are too short to qualify.</li></ul>
+  <div class="todo">Prices are my placeholders ($0.40 / $0.10 / $1.60 per million tokens). Replace with the real gpt-6-luna prices before submitting.</div>
+</section>
+
+<section>
+  <h2>Safety: defenses that were tested</h2>
+  <div class="cols"><ul style="font-size:.85em">
+    <li><b>Private prices never enter the prompt</b>, plus an output guard</li>
+    <li>3 injection attacks: <b>0 leaks</b></li>
+    <li>Translator checks every number</li>
+    <li>Token caps, 4-step tool limit, rate limits</li>
+    <li>Passwords hashed, lockout, one-time reset links, admin license review</li></ul>
+  <div><img src="{{IMG:07_tokens_and_safety_log.jpg}}" style="max-height:400px"><div class="cap"><b>9 of 9</b> safety checks passed. Safety log shown in the app.</div></div></div>
+</section>
+
+<section>
+  <h2>Impact</h2>
+  <ul><li>Cost to serve: about <b>half a cent</b> per buyer session, versus a $4,700 booth [1] or a ~$4,000 show trip [3]</li>
+    <li>Measured speed: search 1.5 to 2.5 s, chat reply under 1.1 s (English)</li>
+    <li>Opens trade to people who cannot travel and to buyers and makers who do not share a language</li></ul>
+  <div class="todo"><b>Real user trial (fill in):</b> who tried it ______ · time ______ min · quote: "______" · add a photo or screenshot</div>
+</section>
+
+<section>
+  <h2>What's next</h2>
+  <ul><li><b>Pilot with real people</b>: my dad and two small manufacturers</li>
+    <li>Native-speaker check of Bisaya, Spanish, Vietnamese, Chinese</li>
+    <li>Real vendor onboarding from a price sheet</li>
+    <li>Real Zoom and Google Meet links, email verification, a real database, hosting</li></ul>
+  <p class="small">Limits today: fake demo vendors, placeholder video links, no orders or payments.<br>Sources: [1] register.wtccentralpa.org (2025 booth) · [2] agriculture.vermont.gov (2026 booth) · [3] successfulmeetings.com · [4] freshplaza.com (Anuga 2025)</p>
+</section>
+
+</div></div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>Reveal.initialize({ hash: true, width: 1280, height: 720, margin: 0.06, controls: true, progress: true, slideNumber: 'c/t', transition: 'fade', center: false });</script>
+</body>
+</html>

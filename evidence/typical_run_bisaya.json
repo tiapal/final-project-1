@@ -1,0 +1,108 @@
+{
+ "session": "run-ceb2",
+ "language": "ceb",
+ "timings_seconds": {
+  "search": 2.5,
+  "message_1": 0.7,
+  "message_2": 3.0,
+  "message_3": 5.1,
+  "message_4": 1.8,
+  "message_5": 3.7,
+  "view_in_buyer_language": 1.3,
+  "summary": 4.7
+ },
+ "usage": {
+  "by_agent": [
+   {
+    "agent": "booth_rep",
+    "calls": 8,
+    "prompt": 6525,
+    "cached": 0,
+    "completion": 203,
+    "cost_usd": 0.002935
+   },
+   {
+    "agent": "deal_brief",
+    "calls": 1,
+    "prompt": 312,
+    "cached": 0,
+    "completion": 156,
+    "cost_usd": 0.000374
+   },
+   {
+    "agent": "matchmaker",
+    "calls": 2,
+    "prompt": 991,
+    "cached": 0,
+    "completion": 122,
+    "cost_usd": 0.000592
+   },
+   {
+    "agent": "translator",
+    "calls": 8,
+    "prompt": 1019,
+    "cached": 0,
+    "completion": 424,
+    "cost_usd": 0.001086
+   }
+  ],
+  "total": {
+   "calls": 19,
+   "prompt": 8847,
+   "cached": 0,
+   "completion": 905,
+   "cost_usd": 0.004987
+  },
+  "session_cap": 80000,
+  "daily_cap": 1500000,
+  "model": "gpt-6-luna",
+  "assumed_prices_per_m": {
+   "input": 0.4,
+   "cached": 0.1,
+   "output": 1.6
+  }
+ },
+ "chat": [
+  [
+   "buyer",
+   "Kumusta, unsa nga mga sarsa ang inyong gibaligya?"
+  ],
+  [
+   "agent",
+   "Namigbaligya kami og sweet chili sauce sa 250 ml nga mga botelya ug banana ketchup sa 320 g nga mga botelya. Gihimo ang duha gamit ang mga sili sa Visayas."
+  ],
+  [
+   "buyer",
+   "Pila ang presyo sa 3,000 ka botelya sa sweet chili sauce?"
+  ],
+  [
+   "agent",
+   "Alang sa 3,000 ka botelya sa sweet chili sauce, ang presyo matag yunit kay US$1.20, nga mokabat og US$3,600."
+  ],
+  [
+   "buyer",
+   "Makapadala ba mo sa Los Angeles, ug unsa ka dugay?"
+  ],
+  [
+   "agent",
+   "Oo, nagpadala kami sa USA. Mokabat og 4 weeks ang pagpadala ngadto sa Los Angeles."
+  ],
+  [
+   "buyer",
+   "Halal ba kini?"
+  ],
+  [
+   "agent",
+   "Oo, ang among mga produkto adunay sertipikasyon sa Halal."
+  ],
+  [
+   "buyer",
+   "Pwede ba ko mangayo og sampol una?"
+  ],
+  [
+   "agent",
+   "Oo. Naghatag kami og libreng sample nga 2 ka botelya, nga ipadala sulod sa 7–10 ka adlaw."
+  ]
+ ],
+ "brief": "Gusto sa buyer:\n• Presyo para sa 3,000 ka botelya sa sweet chili sauce.\n• Pagpadala ngadto sa Los Angeles, oras sa pag-deliver, halal nga status, ug sample.\n\nGitanyag sa vendor (eksaktong mga presyo ug minimum nga kantidad):\n• Sweet chili sauce sa mga botelyang 250 ml sa US$1.20 kada usa para sa 3,000 ka botelya; kinatibuk-an nga US$3,600.\n• Libre nga sample nga 2 ka botelya.\n\nNasabutan hangtod karon:\n• Walay gipahayag nga kasabutan sa pagpalit.\n• Miingon ang vendor nga Halal certified ang mga produkto ug nagpadala kini ngadto sa USA.\n\nWala pa masulbad:\n• Kon gusto ba sa buyer nga ipadayon ang order o ang sample.\n• Wala gipahayag ang gasto sa pagpadala ug mga kondisyon sa pagbayad.\n\nGisugyot nga sunod nga lakang:\n• Mahimong mohangyo ang buyer sa libreng sample ug mokumpirma sa mga detalye sa pagpadala ug pagbayad."
+}

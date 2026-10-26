@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design mockup v2 (not the real app)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --green:#1f5c3a; --green-d:#16432a; --cream:#faf5e6; --card:#fffdf6; --line:#d9cfb0; --ink:#1d2a22; --accent:#c8e0c0; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: Georgia, "Times New Roman", serif; background:var(--cream); color:var(--ink); font-size:20px; line-height:1.45; }
+  header { background:var(--green); color:var(--cream); padding:18px 32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+  header h1 { margin:0; font-size:28px; }
+  select { font:inherit; font-size:18px; font-weight:bold; background:var(--cream); color:var(--green-d); border-radius:8px; padding:8px 14px; border:0; }
+  .note { max-width:1100px; margin:18px auto 0; padding:0 24px; font-size:16px; color:#5a5a48; }
+  h2.screen { max-width:1100px; margin:34px auto 12px; padding:0 24px; font-size:24px; color:var(--green-d); }
+  .wrap { max-width:1100px; margin:0 auto 20px; padding:0 24px; }
+  .frame { border:2px solid var(--line); border-radius:14px; overflow:hidden; background:var(--cream); position:relative; }
+  .search { display:flex; gap:12px; padding:18px; background:#fff; border-bottom:2px solid var(--line); }
+  .search .box { flex:1; border:2px solid var(--green); border-radius:10px; padding:12px 16px; background:#fff; }
+  .btn { background:var(--green); color:#fff; border-radius:10px; padding:12px 24px; font-weight:bold; font-size:20px; border:0; font-family:inherit; cursor:pointer; }
+  .btn.alt { background:#fff; color:var(--green-d); border:2px solid var(--green); }
+  .chips { display:flex; gap:10px; padding:14px 18px 0; overflow-x:auto; }
+  .chip { white-space:nowrap; border:2px solid var(--green); color:var(--green-d); border-radius:999px; padding:6px 16px; font-size:17px; background:#fff; }
+  .chip.on { background:var(--green); color:#fff; }
+  .row { padding:16px 0 6px; }
+  .row h3 { margin:0 18px 10px; font-size:23px; display:flex; justify-content:space-between; }
+  .row h3 span { font-size:16px; color:var(--green); font-weight:normal; }
+  .scroller { display:flex; gap:16px; overflow-x:auto; padding:4px 18px 14px; scroll-snap-type:x mandatory; }
+  .scroller::-webkit-scrollbar { height:8px } .scroller::-webkit-scrollbar-thumb { background:var(--line); border-radius:8px }
+  .card { flex:0 0 230px; scroll-snap-align:start; background:var(--card); border:2px solid var(--line); border-radius:14px; overflow:hidden; }
+  .photo { height:130px; display:flex; align-items:center; justify-content:center; font-size:54px; background:var(--accent); }
+  .card .body { padding:10px 14px 14px; font-size:16px; }
+  .card h4 { margin:0; font-size:20px; }
+  .match { color:var(--green); font-weight:bold; }
+  .tag { display:inline-block; background:var(--accent); color:var(--green-d); border-radius:6px; padding:0 8px; font-size:14px; margin:4px 4px 0 0; }
+  .chat { display:grid; grid-template-columns:1fr 270px; }
+  .msgs { padding:18px; display:flex; flex-direction:column; gap:14px; }
+  .bubble { max-width:80%; padding:12px 16px; border-radius:14px; border:2px solid var(--line); background:#fff; }
+  .bubble.me { align-self:flex-end; background:var(--accent); border-color:#a9c9a0; }
+  .bubble small { display:block; margin-top:6px; color:#6a6a58; font-size:14px; }
+  .who { font-size:14px; font-weight:bold; color:var(--green-d); margin-bottom:2px; }
+  .side { border-left:2px solid var(--line); padding:18px; font-size:16px; background:var(--card); }
+  .side h4 { margin:0 0 8px; font-size:18px; }
+  .agent { background:#fff; border:2px solid var(--line); border-radius:10px; padding:8px 12px; margin:8px 0; }
+  .agent b { color:var(--green-d); }
+  .quick { grid-column:1 / -1; display:flex; gap:10px; padding:12px 18px; border-top:2px solid var(--line); background:var(--card); flex-wrap:wrap; }
+  .quick .btn { font-size:18px; padding:10px 18px; }
+  .input { grid-column:1 / -1; display:flex; gap:12px; padding:12px 18px; border-top:2px solid var(--line); background:#fff; }
+  .input .box { flex:1; border:2px solid var(--green); border-radius:10px; padding:12px 16px; color:#777; }
+  /* popup */
+  .overlay { display:none; position:absolute; inset:0; background:rgba(20,40,28,.55); align-items:center; justify-content:center; padding:20px; z-index:5; }
+  .overlay.show { display:flex; }
+  .modal { background:var(--cream); border:3px solid var(--green); border-radius:16px; padding:22px 26px; width:min(520px,100%); }
+  .modal h3 { margin:0 0 4px; font-size:24px; color:var(--green-d); }
+  .modal .who2 { display:inline-block; background:var(--green); color:#fff; border-radius:6px; padding:1px 10px; font-size:14px; margin-bottom:10px; }
+  .modal .opts { display:flex; flex-direction:column; gap:10px; margin:12px 0; }
+  .modal .opts .btn { text-align:left; }
+  .modal input { width:100%; font:inherit; padding:10px 14px; border:2px solid var(--green); border-radius:10px; margin:6px 0; }
+  .modal .row2 { display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
+  @media (max-width:800px){ .chat{grid-template-columns:1fr} .side{border:0} }
+</style>
+</head>
+<body>
+<header><h1>🌿 Virtual Food Expo <span style="font-weight:normal;font-size:20px">(working name)</span></h1>
+  <select><option>🌐 English</option><option>Español</option><option>中文</option><option>Tiếng Việt</option><option>العربية</option><option>Bisaya (Cebuano)</option></select></header>
+<p class="note">Design mockup v2 with fake vendors. Nothing here is the real app yet, but the chat buttons in Screen 2 are clickable so you can see the pop-up flows.</p>
+
+<h2 class="screen">Screen 1: Buyer side, scrolling rows like Uber Eats</h2>
+<div class="wrap"><div class="frame">
+  <div class="search"><div class="box">🔍 What do you need? e.g. "organic olive oil, 5,000 units, under $4"</div><button class="btn">Search</button></div>
+  <div class="chips"><span class="chip on">All</span><span class="chip">Oils &amp; Vinegars</span><span class="chip">Sauces</span><span class="chip">Snacks</span><span class="chip">Rice &amp; Grains</span><span class="chip">Frozen</span><span class="chip">Organic</span><span class="chip">Halal</span></div>
+
+  <div class="row"><h3>Best matches for your request <span>See all ›</span></h3>
+    <div class="scroller">
+      <div class="card"><div class="photo">🫒</div><div class="body"><h4>Olivares del Sur</h4>Seville, Spain<br><span class="match">96% match</span> · ★ 4.8<br><span class="tag">Organic</span><span class="tag">EU</span><br>From $3.40 · Min 2,000</div></div>
+      <div class="card"><div class="photo">🫒</div><div class="body"><h4>Frantoio Bellini</h4>Tuscany, Italy<br><span class="match">91% match</span> · ★ 4.7<br><span class="tag">Organic</span><span class="tag">EU</span><br>From $3.90 · Min 5,000</div></div>
+      <div class="card"><div class="photo">🫒</div><div class="body"><h4>Monte Verde Farms</h4>Andalusia, Spain<br><span class="match">84% match</span> · ★ 4.5<br><span class="tag">EU</span><br>From $3.10 · Min 8,000</div></div>
+      <div class="card"><div class="photo">🫒</div><div class="body"><h4>Kalamata Gold</h4>Peloponnese, Greece<br><span class="match">80% match</span> · ★ 4.6<br><span class="tag">Organic</span><br>From $3.75 · Min 3,000</div></div>
+    </div></div>
+
+  <div class="row"><h3>Sauces from the Philippines <span>See all ›</span></h3>
+    <div class="scroller">
+      <div class="card"><div class="photo">🌶️</div><div class="body"><h4>Cebu Spice Co.</h4>Cebu, Philippines<br>★ 4.9<br><span class="tag">Halal</span><br>From $1.20 · Min 1,000</div></div>
+      <div class="card"><div class="photo">🥭</div><div class="body"><h4>Davao Sweet Mango</h4>Davao, Philippines<br>★ 4.6<br><span class="tag">Organic</span><br>From $2.05 · Min 2,500</div></div>
+      <div class="card"><div class="photo">🥥</div><div class="body"><h4>Bohol Coconut Works</h4>Bohol, Philippines<br>★ 4.7<br><span class="tag">Organic</span><br>From $1.65 · Min 1,500</div></div>
+      <div class="card"><div class="photo">🍚</div><div class="body"><h4>Luzon Rice Mill</h4>Nueva Ecija, Philippines<br>★ 4.4<br>From $0.85 · Min 10,000</div></div>
+    </div></div>
+
+  <div class="row"><h3>Recently viewed <span>See all ›</span></h3>
+    <div class="scroller">
+      <div class="card"><div class="photo">🍫</div><div class="body"><h4>Choco Andes</h4>Lima, Peru<br>★ 4.8<br>From $2.40 · Min 1,000</div></div>
+      <div class="card"><div class="photo">🍜</div><div class="body"><h4>Hanoi Noodle House</h4>Hanoi, Vietnam<br>★ 4.5<br>From $0.60 · Min 5,000</div></div>
+      <div class="card"><div class="photo">🍯</div><div class="body"><h4>Atlas Honey</h4>Marrakech, Morocco<br>★ 4.7<br><span class="tag">Organic</span><br>From $4.10 · Min 800</div></div>
+    </div></div>
+</div></div>
+<p class="note">Each row scrolls sideways with a swipe or finger drag (or a mouse trackpad). Rows are grouped by what the buyer is looking for, and the page scrolls down through the rows.</p>
+
+<h2 class="screen">Screen 2: Inside a booth, chat with translation and quick actions (click the green buttons)</h2>
+<div class="wrap"><div class="frame" id="chatframe">
+  <div style="background:#fff;padding:14px 18px;border-bottom:2px solid var(--line)"><b>Cebu Spice Co.</b> · Cebu, Philippines · Halal &nbsp;|&nbsp; <span style="color:var(--green)">● Booth assistant online</span></div>
+  <div class="chat">
+    <div class="msgs">
+      <div class="bubble"><div class="who">Booth assistant (written in Bisaya, shown to you in English)</div>Welcome! We make sweet chili and banana ketchup sauces. How can I help you?<small>Translated from Bisaya · <u>show original</u></small></div>
+      <div class="bubble me"><div class="who">You (English, sent to the vendor in Bisaya)</div>Can you ship 2,000 bottles to Los Angeles?<small>Translated to Bisaya for the vendor · <u>show what they see</u></small></div>
+      <div class="bubble"><div class="who">Booth assistant</div>Yes. 2,000 is above our 1,000 minimum. Price is $1.20 per bottle, and shipping to Los Angeles takes about 4 weeks.<small>Translated from Bisaya · <u>show original</u></small></div>
+    </div>
+    <div class="side">
+      <h4>Behind the scenes</h4>
+      <div class="agent"><b>Translator agent</b><br>Translates every message into each person's language. Prices, quantities and units are checked so they never change.</div>
+      <div class="agent"><b>Booth agent</b><br>Answers only from this vendor's own listing.</div>
+      <div class="agent"><b>Deal-brief agent</b><br>Makes a one-page summary of the conversation.</div>
+    </div>
+    <div class="quick">
+      <button class="btn" onclick="flow('meeting')">📅 Set up a meeting time</button>
+      <button class="btn" onclick="flow('video')">🎥 Set up a video call</button>
+      <button class="btn" onclick="flow('sample')">📦 Request a sample</button>
+    </div>
+    <div class="input"><div class="box">Type your message in any language…</div><button class="btn">Send</button></div>
+  </div>
+  <div class="overlay" id="ov"><div class="modal" id="modal"></div></div>
+</div></div>
+<p class="note">Pop-ups are labeled with who sees them ("You" or "Vendor"). In the real app, the vendor's pop-up appears on their own screen in their language.</p>
+<br><br>
+
+<script>
+const ov = document.getElementById('ov'), modal = document.getElementById('modal');
+let state = {};
+function show(who, title, body, buttons) {
+  modal.innerHTML = '<span class="who2">' + who + '</span><h3>' + title + '</h3>' + body +
+    '<div class="row2">' + buttons.map(b => '<button class="btn ' + (b.alt ? 'alt' : '') + '" onclick="' + b.go + '">' + b.t + '</button>').join('') + '</div>';
+  ov.classList.add('show');
+}
+function close_() { ov.classList.remove('show'); }
+function flow(kind) {
+  state = { kind };
+  if (kind === 'meeting') pickTime();
+  if (kind === 'video') show('You', 'Which do you prefer?', '<div class="opts"><button class="btn" onclick="state.app=\'Zoom\';pickTime()">Zoom</button><button class="btn" onclick="state.app=\'Google Meet\';pickTime()">Google Meet</button></div>', [{t:'Cancel', alt:1, go:'close_()'}]);
+  if (kind === 'sample') show('You', 'Request a free sample?', '<p>This sends a sample request to Cebu Spice Co. They can accept or decline.</p>', [{t:'Send request', go:'sampleVendor()'}, {t:'Cancel', alt:1, go:'close_()'}]);
+}
+function pickTime() {
+  const what = state.app ? state.app + ' call' : 'meeting';
+  show('You', 'Pick a time for the ' + what, '<div class="opts"><button class="btn" onclick="state.time=\'Tue, Oct 27 · 9:00 AM\';ask()">Tue, Oct 27 · 9:00 AM</button><button class="btn" onclick="state.time=\'Wed, Oct 28 · 2:00 PM\';ask()">Wed, Oct 28 · 2:00 PM</button><button class="btn" onclick="state.time=\'Thu, Oct 29 · 10:30 AM\';ask()">Thu, Oct 29 · 10:30 AM</button></div><small>Times are shown in your time zone and converted for the vendor.</small>', [{t:'Cancel', alt:1, go:'close_()'}]);
+}
+function ask() {
+  const what = state.app ? state.app + ' call' : 'meeting';
+  show('Vendor sees this', 'Meeting request', '<p>The buyer wants a ' + what + ' on <b>' + state.time + '</b>.</p>', [{t:'✔ Agree', go:'addCal()'}, {t:'Suggest another time', alt:1, go:'close_()'}]);
+}
+function addCal() {
+  show('You and the vendor each see this', 'Add to your calendar?', '<p><b>' + state.time + '</b>' + (state.app ? ' · ' + state.app + ' link included' : '') + '</p><div class="opts"><button class="btn" onclick="done(\'Added to your calendar.\')">Google Calendar</button><button class="btn" onclick="done(\'Added to your calendar.\')">Apple Calendar</button><button class="btn" onclick="done(\'Added to your calendar.\')">Outlook</button></div>', [{t:'No thanks', alt:1, go:'close_()'}]);
+}
+function sampleVendor() {
+  show('Vendor sees this', 'Sample request', '<p>The buyer asked for a sample of sweet chili sauce.</p>', [{t:'✔ Confirm', go:'sampleAddress()'}, {t:'✖ Decline', alt:1, go:'close_()'}]);
+}
+function sampleAddress() {
+  show('You see this', 'The vendor said yes!', '<p>Where should they send your sample?</p><input placeholder="Street address"><input placeholder="City, state, ZIP, country">', [{t:'Send address', go:'sampleMsg()'}]);
+}
+function sampleMsg() {
+  show('Automatic message sent to you', 'What is on its way', '<p>"Hello! We are sending 2 bottles (250 ml) of sweet chili sauce, with an ingredient list and our price sheet. Delivery takes about 7–10 days. Please tell us what you think!"</p>', [{t:'Got it', go:'done(\'\')'}]);
+}
+function done(msg) { if (msg) alert(msg); close_(); }
+</script>
+</body>
+</html>

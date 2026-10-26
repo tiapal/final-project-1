@@ -1,0 +1,108 @@
+{
+ "session": "run-en",
+ "language": "en",
+ "timings_seconds": {
+  "search": 1.6,
+  "message_1": 0.9,
+  "message_2": 0.8,
+  "message_3": 1.0,
+  "message_4": 0.6,
+  "message_5": 1.1,
+  "view_in_buyer_language": 0.0,
+  "summary": 0.1
+ },
+ "usage": {
+  "by_agent": [
+   {
+    "agent": "booth_rep",
+    "calls": 7,
+    "prompt": 5591,
+    "cached": 0,
+    "completion": 179,
+    "cost_usd": 0.002523
+   },
+   {
+    "agent": "deal_brief",
+    "calls": 1,
+    "prompt": 321,
+    "cached": 0,
+    "completion": 163,
+    "cost_usd": 0.000389
+   },
+   {
+    "agent": "matchmaker",
+    "calls": 2,
+    "prompt": 991,
+    "cached": 0,
+    "completion": 122,
+    "cost_usd": 0.000592
+   },
+   {
+    "agent": "translator",
+    "calls": 5,
+    "prompt": 487,
+    "cached": 0,
+    "completion": 118,
+    "cost_usd": 0.000384
+   }
+  ],
+  "total": {
+   "calls": 15,
+   "prompt": 7390,
+   "cached": 0,
+   "completion": 582,
+   "cost_usd": 0.003888
+  },
+  "session_cap": 80000,
+  "daily_cap": 1500000,
+  "model": "gpt-6-luna",
+  "assumed_prices_per_m": {
+   "input": 0.4,
+   "cached": 0.1,
+   "output": 1.6
+  }
+ },
+ "chat": [
+  [
+   "buyer",
+   "Hello, what sauces do you sell?"
+  ],
+  [
+   "agent",
+   "We sell sweet chili sauce in 250 ml bottles and banana ketchup in 320 g bottles. Both are made with Visayan chilies."
+  ],
+  [
+   "buyer",
+   "How much for 3,000 bottles of the sweet chili sauce?"
+  ],
+  [
+   "agent",
+   "For 3,000 bottles of sweet chili sauce, the price is $1.20 per bottle, for a total of $3,600."
+  ],
+  [
+   "buyer",
+   "Can you ship to Los Angeles, and how long does it take?"
+  ],
+  [
+   "agent",
+   "We ship to the USA, and shipping takes about 4 weeks. Los Angeles-specific details are not available; our team can follow up."
+  ],
+  [
+   "buyer",
+   "Is it halal certified?"
+  ],
+  [
+   "agent",
+   "Yes, Cebu Spice Co. is Halal certified."
+  ],
+  [
+   "buyer",
+   "Can I get a sample first?"
+  ],
+  [
+   "agent",
+   "Yes. We offer a free 2-bottle sample, which ships in 7–10 days."
+  ]
+ ],
+ "brief": "What the buyer wants:\n• 3,000 bottles of sweet chili sauce.\n• Shipping to Los Angeles; asked about delivery time, halal certification, and a sample.\n\nWhat the vendor offered (exact prices and minimums):\n• Sweet chili sauce comes in 250 ml bottles; made with Visayan chilies.\n• 3,000 bottles at $1.20 each, $3,600 total.\n• Free 2-bottle sample; ships in 7–10 days.\n• USA shipping takes about 4 weeks.\n\nAgreed so far:\n• The vendor says Cebu Spice Co. is Halal certified.\n\nStill open:\n• Los Angeles-specific shipping details are unavailable; the vendor’s team can follow up.\n\nSuggested next step:\n• Ask the vendor to confirm Los Angeles shipping details."
+}
